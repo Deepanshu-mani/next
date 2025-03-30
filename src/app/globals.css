@@ -14,11 +14,13 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: "Neue Haas Display Black", sans-serif;
     background-color: var(--bg);
     color: var(--copy);
     overflow-x: hidden;
+    scrollbar-width: none;
+
 }
 
 /* Global Image Styling */
@@ -139,7 +141,7 @@ a:hover::after {
 /* Info Section */
 .info {
     width: 100vw;
-    min-height: 100vh;
+    height: 80vh;
     background-color: var(--bg);
     display: flex;
     align-items: center;
@@ -198,6 +200,12 @@ a:hover::after {
     z-index: 1;
     animation: none  !important;
 }
+
+.circular-text{
+    position: absolute;
+    right: 2px;
+}
+
 
 
 /* Font Faces */

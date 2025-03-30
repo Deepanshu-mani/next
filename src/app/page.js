@@ -1,35 +1,26 @@
 "use client";
 import ReactLenis from "@studio-freight/react-lenis";
-import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
-import SplitType from "split-type";
+import Home from "./home/Home";
+import { useRef } from "react";
 
-export default function Home() {
+export default function MainHome() {
   const container = useRef(null);
 
-  useLayoutEffect(() => {
-    let ctx = gsap.context(() => {
-      const heroText = new SplitType(".home h1", { types: "chars" });
-
-      gsap.set(heroText.chars, { y: 200  , opacity:0});
-
-      gsap.to(heroText.chars, {
-        y: 0,
-        opacity:1,
-        duration: 1,
-        stagger: 0.075,
-        ease: "power4.out",
-        delay: 1,
-      });
-    }, container);
-
-    return () => ctx.revert(); // Cleanup on unmount
-  }, []);
+  const handleAnimationComplete = () => {
+    console.log("Animation completed!");
+  };
 
   return (
     <ReactLenis root>
       <div className="home" ref={container}>
-        <h1>Mani</h1>
+        <Home
+          text="M A N I"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          onAnimationComplete={handleAnimationComplete}
+          className="text-[2000%] mb-8"
+        />
       </div>
     </ReactLenis>
   );

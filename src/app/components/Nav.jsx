@@ -52,7 +52,7 @@ document.documentElement.animate(
                         }}
                         href="/"
                     >
-                        Index
+                        Home
                     </a>
                 </div>
             </div>

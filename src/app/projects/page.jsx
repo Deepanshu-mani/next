@@ -1,29 +1,32 @@
 "use client"
 import ReactLenis from "@studio-freight/react-lenis";
-
+import { motion, useScroll } from "framer-motion";
 const Projects = () => {
-    return(
+    const { scrollYProgress } = useScroll();
+    return (
         <ReactLenis root>
+            <motion.div
+                style={{ scaleX: scrollYProgress }}
+                className=" bg-[#15F095] fixed w-full h-3  top-0 left-0 origin-left  "> </motion.div>
+            <div className="projects">
+                <div className="images">
+                    <img src="2.webp" alt="" />
 
-        <div className="projects">
-        <div className="images">
-        <img src="2.jpg" alt=""/>
+                    <img src="1.webp" alt="" />
+                    <img src="3.webp" alt="" />
+                    <img src="4.webp" alt="" />
+                    <img src="5.webp" alt="" />
+                    <img src="6.webp" alt="" />
+                    <img src="7.webp" alt="" />
+                    <img src="8.webp" alt="" />
+                    <img src="9.webp" alt="" />
+                    <img src="12.webp" alt="" />
 
-            <img src="1.jpg" alt=""/>
-            <img src="3.jpg" alt=""/>
-            <img src="4.jpg" alt=""/> 
-            <img src="5.jpg" alt=""/>
-            <img src="6.jpg" alt=""/>
-            <img src="7.jpg" alt=""/>
-            <img src="8.jpg" alt=""/>
-            <img src="9.jpg" alt=""/>
-            <img src="12.jpg" alt=""/>
-            
 
-        </div>
+                </div>
 
-    </div>
-    </ReactLenis>
+            </div>
+        </ReactLenis>
 
     )
 }
